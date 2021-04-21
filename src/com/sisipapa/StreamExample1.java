@@ -1,13 +1,14 @@
 package com.sisipapa;
 
 import java.util.Arrays;
+import java.util.Comparator;
 import java.util.List;
 import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
-public class StreamExample {
+public class StreamExample1 {
 
     /**
      * List를 정렬할 때는 Collection.sort()를 사용해야하고,
@@ -16,14 +17,14 @@ public class StreamExample {
      */
     public static void streamTest1(){
         // Arrays.asList(String[] => List<String>)
-        String[] strArr = {"aaa", "bbb", "ccc"};
+        String[] strArr = {"bbb", "ddd", "aaa", "ccc"};
         List<String> strList = Arrays.asList(strArr);
 
         Stream<String> strStream1 = strList.stream();       // List => Stream
         Stream<String> strStream2 = Arrays.stream(strArr);  // Arrays => Stream
 
         strStream1.sorted().forEach(System.out::println);
-        strStream2.sorted().forEach(System.out::println);
+        strStream2.sorted(Comparator.reverseOrder()).forEach(System.out::println);
     }
 
     /**
