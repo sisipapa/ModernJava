@@ -7,6 +7,9 @@ public class StreamExample2 {
 
     private static final List<Integer> NUMBERS = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
 
+    /**
+     * 반복문/제어문을 활용
+     */
     public static void method1(){
         Integer result = null;
         for (final Integer number : NUMBERS) {
@@ -22,9 +25,12 @@ public class StreamExample2 {
         System.out.println("반복문 제어문의 결과: " + result);
     }
 
+    /**
+     * Stream lamda1
+     */
     public static void method2(){
         System.out.println("\n==================================");
-        System.out.println("Stream filter와 map을 활용한 결과: " +
+        System.out.println("Stream filter와 map을 활용한 결과 lamda1 : " +
                 NUMBERS.stream()
                         .filter(number -> number > 3)
                         .filter(number -> number < 9)
@@ -34,24 +40,23 @@ public class StreamExample2 {
         );
     }
 
+    /**
+     * Stream lamda2
+     */
     public static void method3(){
         System.out.println("\n==================================");
-        System.out.println("Stream filter와 map을 활용한 결과 (with logging): " +
+        System.out.println("Stream filter와 map을 활용한 결과 lamda2 : " +
                 NUMBERS.stream()
                         .filter(number -> {
-                            System.out.println("number > 3");
                             return number > 3;
                         })
                         .filter(number -> {
-                            System.out.println("number < 9");
                             return number < 9;
                         })
                         .map(number -> {
-                            System.out.println("number * 2");
                             return number * 2;
                         })
                         .filter(number -> {
-                            System.out.println("number > 10");
                             return number > 10;
                         })
                         .findFirst()
