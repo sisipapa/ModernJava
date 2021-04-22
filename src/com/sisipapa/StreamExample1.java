@@ -3,9 +3,7 @@ package com.sisipapa;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
-import java.util.stream.DoubleStream;
 import java.util.stream.IntStream;
-import java.util.stream.LongStream;
 import java.util.stream.Stream;
 
 public class StreamExample1 {
@@ -34,6 +32,7 @@ public class StreamExample1 {
      * 오토박싱/언박싱의 비효율을 줄이기 위해 데이터 소스의 요소를 기본형으로 다루는 InsStream, LongStream, DoubleStream이 제공된다.
      */
     public static void streamTest2(){
+        // IntStream
         System.out.println("###range");
         IntStream.range(0, 10).forEach(num -> System.out.print(" " + num));
         System.out.println("");
@@ -41,9 +40,35 @@ public class StreamExample1 {
         IntStream.rangeClosed(0, 10).forEach(num -> System.out.print(" " + num));
     }
 
+    public static void streamTest3(){
+        Stream<Integer> evenStream = Stream.iterate(0, n->n+2);
+        evenStream.limit(5).forEach(System.out::println);
+    }
+
+    public static void streamTest4(){
+        Stream<Double> randomStream = Stream.generate(Math::random);
+        randomStream.limit(5).forEach(System.out::println);
+    }
+
+    public static void streamTest5(){
+        String[] str1 = {"1", "2", "3", "1", "3"};
+        String[] str2 = {"A", "B", "C", "B", "Z", "D"};
+
+        Stream<String> strs1 = Stream.of(str1);
+        Stream<String> strs2 = Stream.of(str2);
+        Stream<String> strs3 = Stream.concat(strs1, strs2);   // 스트림 연결
+
+        System.out.println("Stream 연결 중복제거");
+        strs3.distinct().forEach(System.out::println);
+
+    }
+
     public static void main(String[] args){
-        streamTest1();
-        streamTest2();
+//        streamTest1();
+//        streamTest2();
+//        streamTest3();
+//        streamTest4();
+        streamTest5();
     }
 
 }
