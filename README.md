@@ -301,6 +301,6 @@ public static void basic7(){
 
 
 [SISIPAPA정리노트-StreamExample1](https://sisipapa.github.io/blog/2021/04/22/Modern-Java-Stream1)  
-[SISIPAPA정리노트-StreamExample1](https://sisipapa.github.io/blog/2021/04/22/Modern-Java-Stream2)  
-[SISIPAPA정리노트-StreamExample1](https://sisipapa.github.io/blog/2021/04/22/Modern-Java-Stream3)  
+[SISIPAPA정리노트-StreamExample2](https://sisipapa.github.io/blog/2021/04/22/Modern-Java-Stream2)  
+[SISIPAPA정리노트-StreamExample3](https://sisipapa.github.io/blog/2021/04/22/Modern-Java-Stream3)  
 
