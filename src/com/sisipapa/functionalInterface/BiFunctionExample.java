@@ -1,4 +1,4 @@
-package com.sisipapa;
+package com.sisipapa.functionalInterface;
 
 import java.util.function.BiFunction;
 

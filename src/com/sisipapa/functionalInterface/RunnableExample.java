@@ -1,4 +1,4 @@
-package com.sisipapa;
+package com.sisipapa.functionalInterface;
 
 public class RunnableExample {
 
